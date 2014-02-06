@@ -7,6 +7,10 @@ h1
   color:red;
   text-align:center;
   font-family:"Verdana";
+  border: 2px solid red;
+    position: fixed;
+    width: 100%;
+    top: 0px;
 }
 body
 {
