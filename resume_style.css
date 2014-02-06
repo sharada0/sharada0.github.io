@@ -4,9 +4,9 @@
 
 h1
 {
+  text-align:center;
   font-family:"Verdana";
   font-size:23px;
-  text-align:center;
 }
 h2
 {
@@ -23,9 +23,9 @@ h3
 }
 h4
 {
+  text-align:center;
   font-family:"Verdana";
   font-size:14px;
-  text-align:center;
 }
 body
 {
