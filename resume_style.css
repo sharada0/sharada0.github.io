@@ -35,6 +35,12 @@ body
   font-size:12px;
   text-indent:20px;
 }
+p
+{
+  font-family:"Verdana";
+  font-size:12px;
+  text-indent:20px;
+}
 
 </style>
 </html>
