@@ -18,5 +18,11 @@ img
   font-family:"Verdana";
 }
 
+div#title
+{
+background-color:red;
+margin-top:auto;
+}
+
 </style>
 </html>
