@@ -11,8 +11,9 @@ h2
 {
   text-align:left;
   font-family:"Verdana";
-  font-weight: bold;
-	text-decoration: underline;
+  font-weight:bold;
+  text-decoration:underline;
+  font-size:70%;
 }
 body
 {
