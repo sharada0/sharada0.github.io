@@ -4,21 +4,24 @@
 
 h1
 {
-  text-align:left;
   font-family:"Verdana";
   font-size:25px;
 }
 h2
 {
-  text-align:left;
   font-family:"Verdana";
   font-weight:bold;
   text-decoration:underline;
   font-size:18px;
 }
+h3
+{
+  font-family:"Verdana";
+  font-weight:bold;
+  font-size:14px;
+}
 body
 {
-  text-align:left;
   font-family:"Verdana";
   font-size:14px;
 }
