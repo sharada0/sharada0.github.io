@@ -2,7 +2,7 @@
 <html>
 <style>
 
-h1
+h4
 {
   text-align:center;
   font-family:"Verdana";
@@ -21,17 +21,11 @@ h3
   font-weight:bold;
   font-size:12px;
 }
-h4
+h1
 {
   text-align:center;
   font-family:"Verdana";
   font-size:14px;
-}
-h5
-{
-  text-align:center;
-  font-family:"Verdana";
-  font-size:23px;
 }
 body
 {
