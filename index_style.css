@@ -2,18 +2,20 @@
 <html>
 <style>
 
-body
-{
-}
 h1
 {
-color:red;
-text-align:center;
-font-family:"Verdana";
+  color:red;
+  text-align:center;
+  font-family:"Verdana";
 }
-p
+body
 {
-font-family:"Verdana";
+  text-align:center;
+  font-family:"Verdana";
+}
+img
+{
+  font-family:"Verdana";
 }
 
 </style>
