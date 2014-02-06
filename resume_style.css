@@ -6,6 +6,7 @@ h1
 {
   font-family:"Verdana";
   font-size:23px;
+  text-align:center;
 }
 h2
 {
@@ -19,6 +20,12 @@ h3
   font-family:"Verdana";
   font-weight:bold;
   font-size:12px;
+}
+h4
+{
+  font-family:"Verdana";
+  font-size:14px;
+  text-align:center;
 }
 body
 {
