@@ -6,6 +6,7 @@ h1
 {
   text-align:left;
   font-family:"Verdana";
+  font-size:25px;
 }
 h2
 {
@@ -13,13 +14,13 @@ h2
   font-family:"Verdana";
   font-weight:bold;
   text-decoration:underline;
-  font-size:25px;
+  font-size:18px;
 }
 body
 {
   text-align:left;
   font-family:"Verdana";
-  font-size:18px;
+  font-size:14px;
 }
 
 </style>
