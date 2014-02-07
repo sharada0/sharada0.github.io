@@ -1,0 +1,28 @@
+h1
+{
+  color:red;
+  text-align:center;
+  font-family:"Verdana";
+}
+body
+{
+  text-align:center;
+  font-family:"Verdana";
+  border-left:40px black ridge;
+  border-right:40px black ridge;
+
+}
+p
+{
+  width:720px;
+  padding:20px;
+  border:10px;
+  border-color:#89D0D0;
+  border-style:groove;
+  margin-left:auto;
+  margin-right:auto;
+}
+img
+{
+  font-family:"Verdana";
+}
