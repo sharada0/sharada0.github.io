@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html>
-<style>
-
-
+h1
+{
+  text-align:center;
+  font-family:"Verdana";
+  font-size:23px;
+}
 h2
 {
   font-family:"Verdana";
   font-weight:bold;
   text-decoration:underline;
   font-size:17px;
-}
-h1
-{
-  text-align:center;
-  font-family:"Verdana";
-  font-size:23px;
 }
 h3
 {
@@ -41,6 +36,3 @@ p
   font-size:12px;
   text-indent:20px;
 }
-
-</style>
-</html>
