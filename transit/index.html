@@ -2,14 +2,13 @@
 
 <html>
 
-<head>
-<title>MBTA Map and Schedule Rodeo</title>
-
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places"></script>
+	<head>
+		<title>My map</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places"></script>
 		<link rel="stylesheet" href="style.css" />
 
-<script>
+		<script>
 			var myLat = 0;
 			var myLng = 0;
 			var request = new XMLHttpRequest();
@@ -101,13 +100,9 @@
 				});
       }
 		</script>
+	</head>
 
-
-</head>
-
-<body onload="init()">
+	<body onload="init()">
 		<div id="map_canvas"></div>
-
-</body>
-
+	</body>
 </html>
