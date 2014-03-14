@@ -61,7 +61,7 @@ function renderMap()
 	var request = {
 		location: me,
 		radius: '500',
-		types: ['food']
+		types: ['stations']
 	};
 	service = new google.maps.places.PlacesService(map);
 	service.search(request, callback);
