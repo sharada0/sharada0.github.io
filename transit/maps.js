@@ -423,7 +423,6 @@ function createMarker()
 {
 	stations.forEach(function(station){
 		var tlineCoords = new Array();
-		var coord;
 		var color;
 		if(station.Line.toLowerCase() == line){
 			var stationLoc = new google.maps.LatLng(station.lat, station.Long);
@@ -444,6 +443,8 @@ function createMarker()
 			//if (line == "red")
 			//	color = '#FF0000'
 		}
+		tlineCoords = [new google.maps.LatLng(42, -71), new google.maps.LatLng(43, -70)];
+		console.log(tlineCoords);
 		var tline = new google.maps.Polyline({
    			path: tlineCoords,
 			geodesic: true,
