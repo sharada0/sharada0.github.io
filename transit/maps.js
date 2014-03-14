@@ -423,9 +423,11 @@ function createMarker(place)
 	stations.forEach(function(station){
 		if(station.Line.toLowerCase() == line){
 			var stationLoc = new google.maps.LatLng(station.lat, station.long);
+			var image = 'pinkmarker.png';
 			var marker = new google.maps.Marker({
 				map: map,
-				position: stationLoc
+				position: stationLoc,
+				icon: image
 			});
 			google.maps.event.addListener(marker, 'click', function() {
 					infowindow.close();
