@@ -443,7 +443,7 @@ function createMarker()
 			//if (line == "red")
 			//	color = '#FF0000'
 		}
-		tlineCoords2 = [new google.maps.LatLng(42, -71), new google.maps.LatLng(43, -70)];
+		var tlineCoords2 = [new google.maps.LatLng(42, -71), new google.maps.LatLng(43, -70)];
 		console.log(tlineCoords2);
 		var tline = new google.maps.Polyline({
    			path: tlineCoords2,
@@ -452,6 +452,7 @@ function createMarker()
     		strokeOpacity: 1.0,
     		strokeWeight: 2
   		});
+  		tline.setMap(map);
 	});
 }
 
