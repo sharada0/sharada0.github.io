@@ -420,6 +420,22 @@ function callback(results, status)
 
 function createMarker(place)
 {
+	stations.forEach(function(station){
+		if(station.Line.toLowerCase() == line){
+			var stationLoc = new google.maps.LatLng(station.lat, station.long);
+			var marker = new google.maps.Marker({
+				map: map,
+				position: stationLoc
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+					infowindow.close();
+					infowindow.setContent(station.station);
+					infowindow.open(map, this);
+			});
+		}
+	});
+}
+/*
 	var placeLoc = place.geometry.location;
 	var marker = new google.maps.Marker({
 					map: map,
@@ -432,3 +448,4 @@ function createMarker(place)
 					infowindow.open(map, this);
 	});
 }
+*/
