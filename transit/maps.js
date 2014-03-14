@@ -25,6 +25,19 @@ function init()
 	xhr.send(null);  //Execute!
 }
 
+function dataReady() {
+	if (xhr.readyState == 4 && xhr.status == 200) {    //4 = complete
+		scheduleData = JSON.parse(xhr.responseText);
+		scheduleDom = document.getElementById("schedule");
+		scheduleDom.innerHTML = scheduleData["line"];
+	}
+	else if (xhr.readyState == 4 && xhr.status == 500) {
+		scheduleDom = document.getElementById("schedule");
+		scheduleDom.innerHTML = '<p><img src="http://www.yiyinglu.com/failwhale/images/Homer_the_New_Fail_Whale_by_edwheeler.jpg" alt="fail" /></p>';
+
+	}
+}
+
 function getMyLocation()
 {
 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
@@ -63,7 +76,7 @@ function renderMap()
 	var request = {
 		location: me,
 		radius: '500',
-		types: ['stations']
+		types: ['food']
 	};
 	service = new google.maps.places.PlacesService(map);
 	service.search(request, callback);
