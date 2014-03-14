@@ -355,6 +355,7 @@ function dataReady() {
 		createMarker();
 	}
 	else if (xhr.readyState == 4 && xhr.status == 500) {
+		alert("Something went wrong - 500 error");
 		scheduleDom = document.getElementById("schedule");
 		scheduleDom.innerHTML = '<p><img src="http://www.yiyinglu.com/failwhale/images/Homer_the_New_Fail_Whale_by_edwheeler.jpg" alt="fail" /></p>';
 		//OR SOMETHING ELSE ??
@@ -421,6 +422,9 @@ function callback(results, status)
 function createMarker()
 {
 	stations.forEach(function(station){
+		var tlineCoords = new Array();
+		var coord;
+		var color;
 		if(station.Line.toLowerCase() == line){
 			var stationLoc = new google.maps.LatLng(station.lat, station.long);
 			var image = 'pinkmarker.png';
@@ -436,15 +440,17 @@ function createMarker()
 					infowindow.setContent(station.station);
 					infowindow.open(map, this);
 			});
+			tlineCoords.push(stationLoc);
+			//if (line == "red")
+			//	color = '#FF0000'
 		}
-		//polyline
+		var tline = new google.maps.Polyline({
+   			path: tlineCoords,
+			geodesic: true,
+    		strokeColor: '#FF0000',
+    		strokeOpacity: 1.0,
+    		strokeWeight: 2
+  		});
 	});
 }
-/*
-	var placeLoc = place.geometry.location;
-	var marker = new google.maps.Marker({
-					map: map,
-					position: place.geometry.location
-	});
-}
-*/
+
