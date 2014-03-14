@@ -418,7 +418,7 @@ function callback(results, status)
 	}
 }
 
-function createMarker(place)
+function createMarker()
 {
 	stations.forEach(function(station){
 		if(station.Line.toLowerCase() == line){
@@ -437,6 +437,7 @@ function createMarker(place)
 					infowindow.open(map, this);
 			});
 		}
+		//polyline
 	});
 }
 /*
@@ -444,12 +445,6 @@ function createMarker(place)
 	var marker = new google.maps.Marker({
 					map: map,
 					position: place.geometry.location
-	});
-
-	google.maps.event.addListener(marker, 'click', function() {
-					infowindow.close();
-					infowindow.setContent(place.name);
-					infowindow.open(map, this);
 	});
 }
 */
