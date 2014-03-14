@@ -443,8 +443,8 @@ function createMarker()
 			//if (line == "red")
 			//	color = '#FF0000'
 		}
-		tlineCoords.push(new google.maps.LatLng(42, -71);
-		tlineCoords.push(new google.maps.LatLng(43, -70);
+		tlineCoords.push(new google.maps.LatLng(42, -71));
+		tlineCoords.push(new google.maps.LatLng(43, -70));
 		console.log(tlineCoords);
 		var tline = new google.maps.Polyline({
    			path: tlineCoords,
