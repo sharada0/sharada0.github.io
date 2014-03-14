@@ -12,15 +12,17 @@ var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
 var places;
+var xhr;
 
 function init()
 {
-	request.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
-	request.onreadystatechange = dataReady; //Response
-	request.send(null);  //Execute!
-
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	getMyLocation();
+
+	xhr = new XMLHttpRequest();
+	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
+	xhr.onreadystatechange = dataReady; //Response
+	xhr.send(null);  //Execute!
 }
 
 function getMyLocation()
