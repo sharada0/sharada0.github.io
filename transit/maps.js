@@ -424,8 +424,8 @@ function createMarker(place)
 		if(station.Line.toLowerCase() == line){
 			var stationLoc = new google.maps.LatLng(station.lat, station.long);
 			var image = 'pinkmarker.png';
-			image.style.height = '20px';
-			image.style.width = '20px';
+			image.style.height = '40px';
+			image.style.width = '40px';
 			var marker = new google.maps.Marker({
 				map: map,
 				position: stationLoc,
