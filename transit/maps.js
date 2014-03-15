@@ -455,10 +455,10 @@ function createLines(tline)
 		var info = new google.maps.InfoWindow();
 
 		google.maps.event.addListener(marker, 'click', function(content) {
-//				return function(){
-        				infowindow.setContent(content);//set the content
-        				infowindow.open(map,this);
-    				}
+				return function(){
+        			infowindow.setContent(content);
+        			infowindow.open(map,this);
+    			}
 		}(scheduleString));
 
 		marker.setMap(map);  // REMOVE THIS IF NOT NEEDED
