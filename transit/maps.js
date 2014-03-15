@@ -341,7 +341,15 @@ var stations = [
   }
 ];
 
-for (var i = stations.length - 1; i >= 0; i--) {
+
+function init()
+{
+	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	getMyLocation();
+
+	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
+
+	for (var i = stations.length - 1; i >= 0; i--) {
         if (stations[i].line == "Red") {
                 redLine.push(stations[i]);
         }
@@ -351,14 +359,8 @@ for (var i = stations.length - 1; i >= 0; i--) {
         else if (stations[i].line == "Orange") {
                 orangeLine.push(stations[i]);
         }       
-};
+	};
 
-function init()
-{
-	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	getMyLocation();
-
-	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
 	xhr.onreadystatechange = dataReady; //Response
 	xhr.send(null);  //Execute!
 }
@@ -470,7 +472,7 @@ function createLines(tline)
 		//if (line == "red")
 		//	color = '#FF0000'
 	}
-	console.log(tlineCoords);
+//	console.log(tlineCoords);
 	var tline2 = new google.maps.Polyline({
    		path: tlineCoords,
 		geodesic: true,
