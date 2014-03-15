@@ -499,10 +499,8 @@ function closestStation(line)
         	var x = theLat-myLat;
         	var dLat = x.toRad();  
         	var y = theLong-myLong;
-        	var dLon = xy.toRad();  
-        	var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
-                                (Math.cos(myLat.toRad())) * (Math.cos(theLat.toRad())) * 
-                                (Math.sin(dLon/2)) * (Math.sin(dLon/2));   
+        	var dLon = y.toRad();  
+        	var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + (Math.cos(myLat.toRad())) * (Math.cos(theLat.toRad())) * (Math.sin(dLon/2)) * (Math.sin(dLon/2));   
         	var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
         	var d = R * c; 
         	if (d < closestDist) {
