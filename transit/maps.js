@@ -1,6 +1,6 @@
-var myLat = 0;
-var myLng = 0;
-var request = new XMLHttpRequest();
+var myLat = 42.40;
+var myLng = -71.12;
+var request;
 
 var me = new google.maps.LatLng(myLat, myLng);
 var myOptions = {
@@ -12,7 +12,7 @@ var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
 var places;
-var xhr = new XMLHttpRequest();
+var xhr;
 var tline = [];
 var line;
 var lineColor;
@@ -345,6 +345,10 @@ var stations = [
 
 function init()
 {
+	xhr = new XMLHttpRequest();
+	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
+	request = new XMLHttpRequest();
+
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	getMyLocation();
 
@@ -360,16 +364,18 @@ function init()
         }       
 	};
 
-	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
 	xhr.onreadystatechange = dataReady; //Response
 	xhr.send(null);  //Execute!
 }
 
 function dataReady() {
-	if (xhr.readyState == 4 && xhr.status == 200) {    //4 = complete
+	if (xhr.status == 500) {
+		alert("Something went wrong, 500 error, refreshing page ...");
+		location.reload();
+	}
+	if (xhr.readyState == 4) {    //4 = complete
 		scheduleData = JSON.parse(xhr.responseText);
 //		line = scheduleData["line"];
-		alert(scheduleData["line"]);
         if(scheduleData.line == "red") {
         	line = redLine;
         	lineColor = "#ff0000";
@@ -386,10 +392,7 @@ function dataReady() {
 		createLines(line);
 
 	}
-	else if (xhr.status == 500) {
-		alert("Something went wrong, 500 error, refreshing page ...");
-		location.reload();
-	}
+
 }
 
 function getMyLocation()
@@ -419,12 +422,13 @@ function renderMap()
 		title: "Current location"
 	});
 	marker.setMap(map);
-
+/*
 	// Open info window on click of marker
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
 	});
+*/
 /*
 	// Calling Google Places API
 	var request = {
@@ -452,26 +456,33 @@ function callback(results, status)
 function createLines(tline)
 {
 	var tlineCoords = [];
-	tline.forEach(function(tline){
-		var stationLoc = new google.maps.LatLng(tline.lat, tline.Long);
+	for (var j = tline.length - 1; j >= 0; j--) {
+
+		stationLoc = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 		var image = 'pinkmarker.png';
 		image.height = '40px';
 		image.width = '40px';
 		var marker = new google.maps.Marker({
 			map: map,
 			position: stationLoc,
-			icon: image
+			icon: image,
+			title: tline[j].station
 		});
+
+		var info = new google.maps.InfoWindow();
+
 		google.maps.event.addListener(marker, 'click', function() {
-				infowindow.close();
-				infowindow.setContent(tline.title);
+//				infowindow.close();
+				infowindow.setContent(this.title);
 				infowindow.open(map, this);
 		});
 		marker.setMap(map);  // REMOVE THIS IF NOT NEEDED
-		tlineCoords.push(stationLoc);
+		locCoords = new google.maps.LatLng(tline[j].lat, tline[j].Long);
+
+		tlineCoords.push(locCoords);
 		//if (line == "red")
 		//	color = '#FF0000'
-	});
+	};
 //	console.log(tlineCoords);
 	var tline2 = new google.maps.Polyline({
    		path: tlineCoords,
