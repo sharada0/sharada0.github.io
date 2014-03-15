@@ -13,6 +13,7 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var places;
 var xhr = new XMLHttpRequest();
+var tline = [];
 var line;
 var lineColor;
 
