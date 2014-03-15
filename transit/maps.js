@@ -375,7 +375,7 @@ function dataReady() {
 	}
 	if (xhr.readyState == 4) {    //4 = complete
 		scheduleData = JSON.parse(xhr.responseText);
-//		line = scheduleData["line"];
+
         if(scheduleData.line == "red") {
         	line = redLine;
         	lineColor = "#ff0000";
@@ -422,81 +422,65 @@ function renderMap()
 		title: "Current location"
 	});
 	marker.setMap(map);
-/*
+
 	// Open info window on click of marker
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
 	});
-*/
-/*
-	// Calling Google Places API
-	var request = {
-		location: me,
-		radius: '500',
-		types: ['food']
-	};
-	service = new google.maps.places.PlacesService(map);
-	service.search(request, callback);
-*/
+    google.maps.event.addListener(infowindow, 'content_changed', function() {
+        infowindow.open(map, marker);
+    })
+                
+        marker.setMap(map);
 }
-/*
-// Taken from http://code.google.com/apis/maps/documentation/javascript/places.html
-function callback(results, status)
-{
-	if (status == google.maps.places.PlacesServiceStatus.OK) {
-		alert("Got places back!");
-		places = results;
-		for (var i = 0; i < results.length; i++) {
-			createMarker(results[i]);
-		}
-	}
-}
-*/
-function createLines(line)
+
+function createLines(tline)
 {
 	var tlineCoords = [];
+	var scheduleString = "";
 	for (var j = line.length - 1; j >= 0; j--) {
 
-		stationLoc = new google.maps.LatLng(line[j].lat, line[j].Long);
+		stationLoc = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 		var image = 'pinkmarker.png';
 		image.height = '40px';
 		image.width = '40px';
 		var marker = new google.maps.Marker({
 			map: map,
 			position: stationLoc,
+			title: tline[j].station
 			icon: image,
-			title: line[j].station
 		});
-
+		scheduleString = makeScheduleString(tline[i].station);
 		var info = new google.maps.InfoWindow();
 
-		google.maps.event.addListener(marker, 'click', function() {
-//				infowindow.close();
-				infowindow.setContent(this.title);
-				infowindow.open(map, this);
-		});
+		google.maps.event.addListener(marker, 'click', function(content) {
+//				return function(){
+        				infowindow.setContent(content);//set the content
+        				infowindow.open(map,this);
+    				}
+		}(scheduleString));
+
 		marker.setMap(map);  // REMOVE THIS IF NOT NEEDED
-		locCoords = new google.maps.LatLng(line[j].lat, line[j].Long);
+		locCoords = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 
 		tlineCoords.push(locCoords);
 		//if (line == "red")
 		//	color = '#FF0000'
 	};
 //	console.log(tlineCoords);
-	var tline = new google.maps.Polyline({
+	var tline2 = new google.maps.Polyline({
    		path: tlineCoords,
 		geodesic: true,
     	strokeColor: lineColor,
     	strokeOpacity: 1.0,
     	strokeWeight: 3
   	});
-  	tline.setMap(map);
+  	tline2.setMap(map);
 }
 
 function closestStation(line)
 {
-    alert("closest stn");
     var closestDist = 999999;
     var closestStation = "";
 
@@ -504,30 +488,99 @@ function closestStation(line)
     	return this * Math.PI / 180;
     }
 
+	navigator.geolocation.getCurrentPosition(function(position) {
+                myLat = position.coords.latitude;
+                myLong = position.coords.longitude;
+
     for (var i = line.length - 1; i >= 0; i--) {
         var theLat = line[i].lat; 
         var theLong = line[i].Long; 
-
-        var R = 3961; // miles
-        var x1 = theLat-myLat;
-        var dLat = x1.toRad();  
-        var x2 = theLong-myLong;
-        var dLon = x2.toRad();  
-        var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
-        Math.cos(myLat.toRad()) * Math.cos(theLat.toRad()) * 
-        ath.sin(dLon/2) * Math.sin(dLon/2);  
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        var R = 3961; // Earth, miles
+        var x = theLat-myLat;
+        var dLat = x.toRad();  
+        var y = theLong-myLong;
+        var dLon = xy.toRad();  
+        var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
+                                (Math.cos(myLat.toRad())) * (Math.cos(theLat.toRad())) * 
+                                (Math.sin(dLon/2)) * (Math.sin(dLon/2));   
+        var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
         var d = R * c; 
-
         if (d < closestDist) {
             closestDist = d;
             closestStation = line[i].station;
         }
     };
 
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
-        infowindow.open(map, marker);
-    });
+    contentString = "<p><strong>Current Location</strong>\
+                                 <br>Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi</p>";
+
+	});
 }
 
+function makeScheduleString(stat)
+{
+
+	var str = "";
+	var trip;
+	var seconds;
+	var dest;
+	str += "<strong>" + stat + "</strong>\
+			<table> \
+			<tr> \
+				<th>Line</th>\
+				<th>Destination</th>\
+				<th>Time Remaining</th>\
+			</tr>";
+
+	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
+		trip = scheduleData.schedule[i];
+		for (var j = trip.Predictions.length - 1; j >= 0; j--) {
+			if (trip.Predictions[j].Stop == stat) {
+				seconds = trip.Predictions[j].Seconds;
+				dest = trip.Destination;
+
+				str += "<tr>\
+							<td>" + capitaliseFirstLetter(scheduleData.line) + "</td>\
+							<td>" + dest + "</td>\
+							<td>" + toMin(seconds) + "</td>\
+						</tr>";
+			}		
+		};
+	};
+
+	str += "</table>";
+	return str;
+
+}
+
+function capitaliseFirstLetter(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function toMin(sec)
+{
+	var minString = "";
+
+	if(sec < 0) {
+		minString += "-";
+		sec *= -1;	
+	}
+
+	var minutes = Math.floor(sec / 60);
+	var seconds = sec - minutes * 60;
+
+
+	if (minutes < 10) {
+		minString += "0";
+	}
+	minString += minutes + ":"
+
+	if (seconds < 10) {
+		minString += "0";
+	}
+	minString += seconds + " min";
+
+	return minString;
+
+}
