@@ -437,7 +437,7 @@ function renderMap()
 function createLines(tline)
 {
 	var tlineCoords = [];
-	var scheduleString = "";
+	var scheduleStr = "";
 	for (var j = tline.length - 1; j >= 0; j--) {
 
 		stationLoc = new google.maps.LatLng(tline[j].lat, tline[j].Long);
@@ -450,7 +450,7 @@ function createLines(tline)
 			title: tline[j].station,
 			icon: image
 		});
-		scheduleString = makeScheduleString(tline[j].station);
+		scheduleStr = makescheduleStr(tline[j].station);
 		var info = new google.maps.InfoWindow();
 
 		google.maps.event.addListener(marker2, 'click', function(content) {
@@ -458,14 +458,13 @@ function createLines(tline)
         			infowindow.setContent(content);
         			infowindow.open(map,this);
     			}
-		}(scheduleString));
+		}(scheduleStr));
 
 		marker2.setMap(map);  // REMOVE THIS IF NOT NEEDED
 		locCoords = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 
 		tlineCoords.push(locCoords);
 	};
-	console.log(tlineCoords);
 	var tline2 = new google.maps.Polyline({
    		path: tlineCoords,
 		geodesic: true,
@@ -512,7 +511,7 @@ function closestStation(line)
 	});
 }
 
-function makeScheduleString(stat)
+function makescheduleStr(stat)
 {
 
 	var str = "";
