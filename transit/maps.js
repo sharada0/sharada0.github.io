@@ -539,7 +539,7 @@ function makeScheduleString(stat)
 				str += "<tr>\
 							<td>" + ((scheduleData.line).charAt(0).toUpperCase() + (scheduleData.line).slice(1)) + "</td>\
 							<td>" + dest + "</td>\
-							<td>" + toMin(seconds) + "</td>\
+							<td>" + secToMin(seconds) + "</td>\
 						</tr>";
 			}		
 		};
@@ -550,29 +550,21 @@ function makeScheduleString(stat)
 
 }
 
-function toMin(sec)
+function secToMin(sec)
 {
 	var minString = "";
-
 	if(sec < 0) {
 		minString += "-";
 		sec *= -1;	
 	}
-
 	var minutes = Math.floor(sec / 60);
 	var seconds = sec - minutes * 60;
-
-
-	if (minutes < 10) {
+	if (minutes < 10)
 		minString += "0";
-	}
 	minString += minutes + ":"
-
-	if (seconds < 10) {
+	if (seconds < 10)
 		minString += "0";
-	}
 	minString += seconds + " min";
 
 	return minString;
-
 }
