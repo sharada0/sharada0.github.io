@@ -511,14 +511,14 @@ function closestStation(line)
 	});
 }
 
-function makescheduleStr(stat)
+function makescheduleStr(station)
 {
 
 	var str = "";
 	var trip;
 	var seconds;
 	var dest;
-	str += "" + stat + "\
+	str += "" + station + "\
 			<table> \
 			<tr> \
 				<th>Line</th>\
@@ -529,7 +529,7 @@ function makescheduleStr(stat)
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
 		trip = scheduleData.schedule[i];
 		for (var j = trip.Predictions.length - 1; j >= 0; j--) {
-			if (trip.Predictions[j].Stop == stat) {
+			if (trip.Predictions[j].Stop == station) {
 				seconds = trip.Predictions[j].Seconds;
 				dest = trip.Destination;
 
