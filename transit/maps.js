@@ -453,12 +453,12 @@ function callback(results, status)
 	}
 }
 */
-function createLines(tline)
+function createLines(line)
 {
 	var tlineCoords = [];
-	for (var j = tline.length - 1; j >= 0; j--) {
+	for (var j = line.length - 1; j >= 0; j--) {
 
-		stationLoc = new google.maps.LatLng(tline[j].lat, tline[j].Long);
+		stationLoc = new google.maps.LatLng(line[j].lat, line[j].Long);
 		var image = 'pinkmarker.png';
 		image.height = '40px';
 		image.width = '40px';
@@ -466,7 +466,7 @@ function createLines(tline)
 			map: map,
 			position: stationLoc,
 			icon: image,
-			title: tline[j].station
+			title: line[j].station
 		});
 
 		var info = new google.maps.InfoWindow();
@@ -477,24 +477,24 @@ function createLines(tline)
 				infowindow.open(map, this);
 		});
 		marker.setMap(map);  // REMOVE THIS IF NOT NEEDED
-		locCoords = new google.maps.LatLng(tline[j].lat, tline[j].Long);
+		locCoords = new google.maps.LatLng(line[j].lat, line[j].Long);
 
 		tlineCoords.push(locCoords);
 		//if (line == "red")
 		//	color = '#FF0000'
 	};
 //	console.log(tlineCoords);
-	var tline2 = new google.maps.Polyline({
+	var tline = new google.maps.Polyline({
    		path: tlineCoords,
 		geodesic: true,
     	strokeColor: lineColor,
     	strokeOpacity: 1.0,
-    	strokeWeight: 2
+    	strokeWeight: 3
   	});
-  	tline2.setMap(map);
+  	tline.setMap(map);
 }
 
-function closestStation(tline)
+function closestStation(line)
 {
     alert("closest stn");
     var closestDist = 999999;
