@@ -448,8 +448,8 @@ function createLines(tline)
 		var marker = new google.maps.Marker({
 			map: map,
 			position: stationLoc,
-			title: tline[j].station
-			icon: image,
+			title: tline[j].station,
+			icon: image
 		});
 		scheduleString = makeScheduleString(tline[i].station);
 		var info = new google.maps.InfoWindow();
