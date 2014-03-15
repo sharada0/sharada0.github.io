@@ -390,7 +390,7 @@ function dataReady() {
         }
 
 		createLines(line);
-//		closestStation(line);
+		closestStation(line);
 	}
 
 }
@@ -492,26 +492,26 @@ function closestStation(line)
                 myLat = position.coords.latitude;
                 myLong = position.coords.longitude;
 
-    for (var i = line.length - 1; i >= 0; i--) {
-        var theLat = line[i].lat; 
-        var theLong = line[i].Long; 
-        var R = 3961; // Earth, miles
-        var x = theLat-myLat;
-        var dLat = x.toRad();  
-        var y = theLong-myLong;
-        var dLon = xy.toRad();  
-        var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
+    	for (var i = line.length - 1; i >= 0; i--) {
+        	var theLat = line[i].lat; 
+        	var theLong = line[i].Long; 
+        	var R = 3961; // Earth, miles
+        	var x = theLat-myLat;
+        	var dLat = x.toRad();  
+        	var y = theLong-myLong;
+        	var dLon = xy.toRad();  
+        	var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
                                 (Math.cos(myLat.toRad())) * (Math.cos(theLat.toRad())) * 
                                 (Math.sin(dLon/2)) * (Math.sin(dLon/2));   
-        var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
-        var d = R * c; 
-        if (d < closestDist) {
-            closestDist = d;
-            closestStation = line[i].station;
-        }
-    };
+        	var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
+        	var d = R * c; 
+        	if (d < closestDist) {
+            	closestDist = d;
+            	closestStation = line[i].station;
+        	}
+    	};
 
-    contentString = "<p><strong>Current Location</strong>\
+    	contentString = "<p><strong>Current Location</strong>\
                                  <br>Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi</p>";
 
 	});
@@ -540,7 +540,7 @@ function makeScheduleString(stat)
 				dest = trip.Destination;
 
 				str += "<tr>\
-							<td>" + capitaliseFirstLetter(scheduleData.line) + "</td>\
+							<td>" + ((scheduleData.line).charAt(0).toUpperCase() + (scheduleData.line).slice(1)) + "</td>\
 							<td>" + dest + "</td>\
 							<td>" + toMin(seconds) + "</td>\
 						</tr>";
@@ -551,11 +551,6 @@ function makeScheduleString(stat)
 	str += "</table>";
 	return str;
 
-}
-
-function capitaliseFirstLetter(string)
-{
-    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function toMin(sec)
