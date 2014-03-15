@@ -465,7 +465,7 @@ function createLines(tline)
 
 		tlineCoords.push(locCoords);
 	};
-//	console.log(tlineCoords);
+	console.log(tlineCoords);
 	var tline2 = new google.maps.Polyline({
    		path: tlineCoords,
 		geodesic: true,
