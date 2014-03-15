@@ -1,4 +1,4 @@
-var myLat = 42.40;
+var myLat = 42.40;    // initially near tufts, but WILL get precise location soon
 var myLng = -71.12;
 var request;
 
@@ -378,15 +378,15 @@ function dataReady() {
 
         if(scheduleData.line == "red") {
         	line = redLine;
-        	lineColor = "#ff0000";
+        	lineColor = "#FF0000";
         }
         else if(scheduleData.line == "blue") {
         	line = blueLine;
-        	lineColor = "#0000ff";
+        	lineColor = "#0000FF";
         }
         else if(scheduleData.line == "orange") {
         	line = orangeLine;
-        	lineColor = "#ffa500";
+        	lineColor = "#FFA500";
         }
 
 		createLines(line);
@@ -441,7 +441,7 @@ function createLines(tline)
 	for (var j = tline.length - 1; j >= 0; j--) {
 
 		stationLoc = new google.maps.LatLng(tline[j].lat, tline[j].Long);
-		var image = 'pinkmarker.png';
+		var image = 'pinkmarker.png'; // custom marker for red line and other lines too
 		image.height = '40px';
 		image.width = '40px';
 		marker2 = new google.maps.Marker({
@@ -464,8 +464,6 @@ function createLines(tline)
 		locCoords = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 
 		tlineCoords.push(locCoords);
-		//if (line == "red")
-		//	color = '#FF0000'
 	};
 //	console.log(tlineCoords);
 	var tline2 = new google.maps.Polyline({
