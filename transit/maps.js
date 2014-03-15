@@ -390,7 +390,7 @@ function dataReady() {
         }
 
 		createLines(line);
-
+		closestStation(line);
 	}
 
 }
@@ -492,5 +492,42 @@ function createLines(tline)
     	strokeWeight: 2
   	});
   	tline2.setMap(map);
+}
+
+function closestStation(tline)
+{
+    alert("closest stn");
+    var closestDist = 999999;
+    var closestStation = "";
+
+    Number.prototype.toRad = function() {
+    	return this * Math.PI / 180;
+    }
+
+    for (var i = line.length - 1; i >= 0; i--) {
+        var theLat = line[i].lat; 
+        var theLong = line[i].Long; 
+
+        var R = 3961; // miles
+        var x1 = theLat-myLat;
+        var dLat = x1.toRad();  
+        var x2 = theLong-myLong;
+        var dLon = x2.toRad();  
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+        Math.cos(myLat.toRad()) * Math.cos(theLat.toRad()) * 
+        ath.sin(dLon/2) * Math.sin(dLon/2);  
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        var d = R * c; 
+
+        if (d < closestDist) {
+            closestDist = d;
+            closestStation = line[i].station;
+        }
+    };
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
+        infowindow.open(map, marker);
+    });
 }
 
