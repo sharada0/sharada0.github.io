@@ -353,13 +353,13 @@ function init()
 	getMyLocation();
 
 	for (var i = stations.length - 1; i >= 0; i--) {
-        if (stations[i].line == "Red") {
+        if (stations[i].Line == "Red") {
                 redLine.push(stations[i]);
         }
-        else if (stations[i].line == "Blue") {
+        else if (stations[i].Line == "Blue") {
                 blueLine.push(stations[i]);
         }
-        else if (stations[i].line == "Orange") {
+        else if (stations[i].Line == "Orange") {
                 orangeLine.push(stations[i]);
         }       
 	};
@@ -421,11 +421,10 @@ function renderMap()
 		position: me,
 		title: "Current location"
 	});
-	marker.setMap(map);
 
 	// Open info window on click of marker
 	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.setContent(marker.title);
+		infowindow.setContent(contentString);
 		infowindow.open(map, marker);
 	});
     google.maps.event.addListener(infowindow, 'content_changed', function() {
@@ -445,7 +444,7 @@ function createLines(tline)
 		var image = 'pinkmarker.png';
 		image.height = '40px';
 		image.width = '40px';
-		var marker = new google.maps.Marker({
+		marker2 = new google.maps.Marker({
 			map: map,
 			position: stationLoc,
 			title: tline[j].station,
@@ -454,14 +453,14 @@ function createLines(tline)
 		scheduleString = makeScheduleString(tline[j].station);
 		var info = new google.maps.InfoWindow();
 
-		google.maps.event.addListener(marker, 'click', function(content) {
+		google.maps.event.addListener(marker2, 'click', function(content) {
 				return function(){
         			infowindow.setContent(content);
         			infowindow.open(map,this);
     			}
 		}(scheduleString));
 
-		marker.setMap(map);  // REMOVE THIS IF NOT NEEDED
+		marker2.setMap(map);  // REMOVE THIS IF NOT NEEDED
 		locCoords = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 
 		tlineCoords.push(locCoords);
