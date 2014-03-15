@@ -439,7 +439,7 @@ function createLines(tline)
 {
 	var tlineCoords = [];
 	var scheduleString = "";
-	for (var j = line.length - 1; j >= 0; j--) {
+	for (var j = tline.length - 1; j >= 0; j--) {
 
 		stationLoc = new google.maps.LatLng(tline[j].lat, tline[j].Long);
 		var image = 'pinkmarker.png';
@@ -451,7 +451,7 @@ function createLines(tline)
 			title: tline[j].station,
 			icon: image
 		});
-		scheduleString = makeScheduleString(tline[i].station);
+		scheduleString = makeScheduleString(tline[j].station);
 		var info = new google.maps.InfoWindow();
 
 		google.maps.event.addListener(marker, 'click', function(content) {
