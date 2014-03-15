@@ -389,7 +389,7 @@ function dataReady() {
         	lineColor = "#ffa500";
         }
 
-//		createLines(line);
+		createLines(line);
 //		closestStation(line);
 	}
 
