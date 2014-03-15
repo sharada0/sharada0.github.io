@@ -389,8 +389,8 @@ function dataReady() {
         	lineColor = "#ffa500";
         }
 
-		createLines(line);
-		closestStation(line);
+//		createLines(line);
+//		closestStation(line);
 	}
 
 }
@@ -432,7 +432,7 @@ function renderMap()
         infowindow.open(map, marker);
     })
                 
-        marker.setMap(map);
+    marker.setMap(map);
 }
 
 function createLines(tline)
