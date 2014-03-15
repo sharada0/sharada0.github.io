@@ -347,8 +347,6 @@ function init()
 {
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	getMyLocation();
-/*
-	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
 
 	for (var i = stations.length - 1; i >= 0; i--) {
         if (stations[i].line == "Red") {
@@ -362,9 +360,9 @@ function init()
         }       
 	};
 
+	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
 	xhr.onreadystatechange = dataReady; //Response
 	xhr.send(null);  //Execute!
-	*/
 }
 
 function dataReady() {
