@@ -370,15 +370,15 @@ function dataReady() {
 		scheduleData = JSON.parse(xhr.responseText);
 //		line = scheduleData["line"];
 		alert(scheduleData["line"]);
-        if(scheduleData.Line == "red") {
+        if(scheduleData.line == "red") {
         	line = redLine;
         	lineColor = "#ff0000";
         }
-        else if(scheduleData.Line == "blue") {
+        else if(scheduleData.line == "blue") {
         	line = blueLine;
         	lineColor = "#0000ff";
         }
-        else if(scheduleData.Line == "orange") {
+        else if(scheduleData.line == "orange") {
         	line = orangeLine;
         	lineColor = "#ffa500";
         }
