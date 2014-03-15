@@ -471,7 +471,7 @@ function createLines(tline)
 		tlineCoords.push(stationLoc);
 		//if (line == "red")
 		//	color = '#FF0000'
-	}
+	});
 //	console.log(tlineCoords);
 	var tline2 = new google.maps.Polyline({
    		path: tlineCoords,
