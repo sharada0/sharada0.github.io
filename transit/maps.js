@@ -12,8 +12,13 @@ var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
 var places;
-var xhr;
+var xhr = new XMLHttpRequest();
 var line;
+var lineColor;
+
+var redLine = [];
+var blueLine = [];
+var orangeLine = [];
 
 var stations = [
   {
@@ -336,12 +341,23 @@ var stations = [
   }
 ];
 
+for (var i = stations.length - 1; i >= 0; i--) {
+        if (stations[i].line == "Red") {
+                redLine.push(stations[i]);
+        }
+        else if (stations[i].line == "Blue") {
+                blueLine.push(stations[i]);
+        }
+        else if (stations[i].line == "Orange") {
+                orangeLine.push(stations[i]);
+        }       
+};
+
 function init()
 {
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	getMyLocation();
 
-	xhr = new XMLHttpRequest();
 	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); //Request
 	xhr.onreadystatechange = dataReady; //Response
 	xhr.send(null);  //Execute!
@@ -350,15 +366,27 @@ function init()
 function dataReady() {
 	if (xhr.readyState == 4 && xhr.status == 200) {    //4 = complete
 		scheduleData = JSON.parse(xhr.responseText);
-		line = scheduleData["line"];
-		alert(line);
-		createMarker();
+//		line = scheduleData["line"];
+		alert(scheduleData["line"]);
+        if(scheduleData.Line == "red") {
+        	line = redLine;
+        	lineColor = "#ff0000";
+        }
+        else if(scheduleData.Line == "blue") {
+        	line = blueLine;
+        	lineColor = "#0000ff";
+        }
+        else if(scheduleData.Line == "orange") {
+        	line = orangeLine;
+        	lineColor = "#ffa500";
+        }
+
+		createLines(line);
+
 	}
-	else if (xhr.readyState == 4 && xhr.status == 500) {
-		alert("Something went wrong - 500 error");
-		scheduleDom = document.getElementById("schedule");
-		scheduleDom.innerHTML = '<p><img src="http://www.yiyinglu.com/failwhale/images/Homer_the_New_Fail_Whale_by_edwheeler.jpg" alt="fail" /></p>';
-		//OR SOMETHING ELSE ??
+	else if (xhr.status == 500) {
+		alert("Something went wrong, 500 error, refreshing page ...");
+		location.reload();
 	}
 }
 
@@ -386,7 +414,7 @@ function renderMap()
 	// Create a marker
 	marker = new google.maps.Marker({
 		position: me,
-		title: "Here I Am!"
+		title: "Current location"
 	});
 	marker.setMap(map);
 
@@ -406,7 +434,7 @@ function renderMap()
 	service.search(request, callback);
 */
 }
-
+/*
 // Taken from http://code.google.com/apis/maps/documentation/javascript/places.html
 function callback(results, status)
 {
@@ -418,40 +446,38 @@ function callback(results, status)
 		}
 	}
 }
-
-function createMarker()
+*/
+function createLines(tline)
 {
-	stations.forEach(function(station){
-		var tlineCoords = new Array();
-		var color;
-		if(station.Line.toLowerCase() == line){
-			var stationLoc = new google.maps.LatLng(station.lat, station.Long);
-			var image = 'pinkmarker.png';
-			image.height = '40px';
-			image.width = '40px';
-			var marker = new google.maps.Marker({
-				map: map,
-				position: stationLoc,
-				icon: image
-			});
-			google.maps.event.addListener(marker, 'click', function() {
-					infowindow.close();
-					infowindow.setContent(station.station);
-					infowindow.open(map, this);
-			});
-			tlineCoords.push(stationLoc);
-			//if (line == "red")
-			//	color = '#FF0000'
-		}
-		console.log(tlineCoords);
-		var tline = new google.maps.Polyline({
-   			path: tlineCoords,
-			geodesic: true,
-    		strokeColor: '#FF0000',
-    		strokeOpacity: 1.0,
-    		strokeWeight: 2
-  		});
-  		tline.setMap(map);
-	});
+	var tlineCoords = [];
+	tline.forEach(function(tline){
+		var stationLoc = new google.maps.LatLng(tline.lat, tline.Long);
+		var image = 'pinkmarker.png';
+		image.height = '40px';
+		image.width = '40px';
+		var marker = new google.maps.Marker({
+			map: map,
+			position: stationLoc,
+			icon: image
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+				infowindow.close();
+				infowindow.setContent(tline.title);
+				infowindow.open(map, this);
+		});
+		marker.setMap(map);  // REMOVE THIS IF NOT NEEDED
+		tlineCoords.push(stationLoc);
+		//if (line == "red")
+		//	color = '#FF0000'
+	}
+	console.log(tlineCoords);
+	var tline2 = new google.maps.Polyline({
+   		path: tlineCoords,
+		geodesic: true,
+    	strokeColor: lineColor,
+    	strokeOpacity: 1.0,
+    	strokeWeight: 2
+  	});
+  	tline2.setMap(map);
 }
 
