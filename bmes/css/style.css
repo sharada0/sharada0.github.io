@@ -271,9 +271,9 @@ nav {
 
 footer { 
   width: 950px;
-  font: 170% 'Yanone Kaffeesatz', arial, sans-serif;
+  font: 110% 'Yanone Kaffeesatz', arial, sans-serif;
   height: 30px;
-  padding: 5px 0 20px 0;
+  padding: 5px 0 2px 0;
   text-align: center;
   border-bottom: 1px solid #FFF;
 }
