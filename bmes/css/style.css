@@ -219,11 +219,11 @@ nav {
   font: 240% 'News Cycle', arial, sans-serif;
   text-shadow:  #000 1px 1px;
   margin: 0 1px;
-  color: #FFFF00;
+  color: #FFFF3B;      /* yellow */
 }
 
 .sidebar h3 { 
-  color: #FF0099;
+  color: #FF27A9;      /* pink */
   font: 270% 'News Cycle', arial, sans-serif;
   padding: 0 15px 5px 0;
 }
