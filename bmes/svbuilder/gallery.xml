@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<simpleviewergallery 
+
+	useFlickr="false"
+	resizeOnImport="true"
+	cropToFit="false"
+	frameColor="000000"
+	frameWidth="15"
+	showOpenButton="true"
+	showFullscreenButton="true"
+	thumbPosition="BOTTOM"
+	galleryStyle="MODERN"
+	useFlash="false"
+	backgroundTransparent="false"
+	indexPageName="bmesgaltest.html"
+
+>
+  <image imageURL="images/yuki_eyenetra.jpg"
+	thumbURL="thumbs/yuki_eyenetra.jpg"
+	linkURL="images/yuki_eyenetra.jpg"
+	linkTarget="_blank">
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/fio_kaplan_bbq.jpg"
+	thumbURL="thumbs/fio_kaplan_bbq.jpg"
+	linkURL="images/fio_kaplan_bbq.jpg"
+	linkTarget="_blank">
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/gim2012.jpg"
+	thumbURL="thumbs/gim2012.jpg"
+	linkURL="images/gim2012.jpg"
+	linkTarget="_blank">
+    <caption><![CDATA[]]></caption>
+  </image>
+</simpleviewergallery>

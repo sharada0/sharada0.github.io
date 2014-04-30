@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualLightBox>
+    <Gallery version="2.5">
+        <Settings>
+            <AppName>WOW Slider</AppName>
+            <AppUrlS>WOWSlider.com</AppUrlS>
+            <AppVersion>5.2</AppVersion>
+            <AutoPlay>false</AutoPlay>
+            <Captions>false</Captions>
+            <CaptionsEffect>fade</CaptionsEffect>
+            <Controls>true</Controls>
+            <GalleryName>gallery1</GalleryName>
+            <GallerySuffix>8</GallerySuffix>
+            <HtmlCharset>UTF-8</HtmlCharset>
+            <ImageAspectRatio>true</ImageAspectRatio>
+            <ImageEffect>fade</ImageEffect>
+            <ImageFillColor></ImageFillColor>
+            <ImageHeight>480</ImageHeight>
+            <ImageQuality>90</ImageQuality>
+            <ImageShrink2>true</ImageShrink2>
+            <ImageStretch>true</ImageStretch>
+            <ImageTemplate>/Applications/WOWSlider.app/Contents/Resources/templates/backgnd/quiet/</ImageTemplate>
+            <ImageTemplateName>Quiet</ImageTemplateName>
+            <ImageWidth>640</ImageWidth>
+            <Images>true</Images>
+            <JoomlaType>2.5</JoomlaType>
+            <OneLoop>false</OneLoop>
+            <OrderRandom>false</OrderRandom>
+            <PlayPause>false</PlayPause>
+            <Preloader>false</Preloader>
+            <PublishFileName>/Users/Sharada/comp20/sharada0.github.io/bmes/gallery.html</PublishFileName>
+            <PublishIndex>gallery.html</PublishIndex>
+            <PublishPath>/Users/Sharada/comp20/sharada0.github.io/bmes</PublishPath>
+            <PublishPreview>true</PublishPreview>
+            <PublishType>page</PublishType>
+            <RelativePath>false</RelativePath>
+            <ShowBullets>0</ShowBullets>
+            <ShowTooltips>true</ShowTooltips>
+            <SlideshowDelay>20</SlideshowDelay>
+            <SlideshowDuration>1</SlideshowDuration>
+            <SoundEnable>0</SoundEnable>
+            <SoundFileName></SoundFileName>
+            <StopOnHover>false</StopOnHover>
+            <TemplateName>quiet</TemplateName>
+            <ThumbAlign>bottom</ThumbAlign>
+            <ThumbFormat>jpg</ThumbFormat>
+            <ThumbHeight>90</ThumbHeight>
+            <ThumbQuality>90</ThumbQuality>
+            <ThumbWidth>0</ThumbWidth>
+            <Thumbnails>true</Thumbnails>
+            <TooltipPos>bottom</TooltipPos>
+            <noFrame>0</noFrame>
+        </Settings>
+        <Images RelativePath="false">
+            <Image>
+                <url>/Users/Sharada/comp20/sharada0.github.io/bmes/images/bmespics/fio_kaplan_bbq.jpg</url>
+                <title>fio_kaplan_bbq</title>
+            </Image>
+            <Image>
+                <url>/Users/Sharada/comp20/sharada0.github.io/bmes/images/bmespics/gim2012.jpg</url>
+                <title>gim2012</title>
+            </Image>
+            <Image>
+                <url>/Users/Sharada/comp20/sharada0.github.io/bmes/images/bmespics/career/yuki_eyenetra.jpg</url>
+                <title>yuki_eyenetra</title>
+            </Image>
+        </Images>
+    </Gallery>
+</VisualLightBox>

@@ -170,7 +170,7 @@ header {
 }
 
 #logo_text h1 a .logo_colour { 
-  color: #09D4FF;
+  color: #56e1ff;                 /* bright blue  for header text*/
 }
 
 #logo_text a:hover .logo_colour { 
@@ -219,11 +219,11 @@ nav {
   font: 240% 'News Cycle', arial, sans-serif;
   text-shadow:  #000 1px 1px;
   margin: 0 1px;
-  color: #FFFF3B;      /* yellow */
+  color: #FFFF66;      /* yellow */
 }
 
 .sidebar h3 { 
-  color: #FF27A9;      /* pink */
+  color: #ff5abd;      /* pink */
   font: 270% 'News Cycle', arial, sans-serif;
   padding: 0 15px 5px 0;
 }

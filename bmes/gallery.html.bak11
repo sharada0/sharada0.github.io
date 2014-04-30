@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>BMES Pictures</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine2//style.css" media="screen" />
+	<script type="text/javascript" src="engine2//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine2//style.css" media="screen" />
+	<script type="text/javascript" src="engine2//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine3//style.css" media="screen" />
+	<script type="text/javascript" src="engine3//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine4//style.css" media="screen" />
+	<script type="text/javascript" src="engine4//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine5//style.css" media="screen" />
+	<script type="text/javascript" src="engine5//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine6//style.css" media="screen" />
+	<script type="text/javascript" src="engine6//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Tufts<span class="logo_colour"> Biomedical Engineering Society</span></a></h1>
+          <h2>Silk. All day, every day.</h2>
+        </div>
+        <div id="logo_pic" style="float: right; width: 370px; margin-top: -80px; margin-right:-100px">
+          <img src="images/bmespics/logo_top_right_blue.png" alt="Logo small" />
+        </div>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="eboard.html">Executive Board</a></li>
+          <li><a href="events.html">Get Involved!</a>
+            <ul>
+              <li><a href="events.html">Calendar of Events</a></li>
+              <li><a href="career.html">Internships/Careers</a></li>
+              <li><a href="social.html">Social</a>
+              <li><a href="outreach.html">Community Outreach</a></li>
+            </ul>
+          </li>
+          <li class="selected"><a href="#">Gallery</a></li>
+          <li><a href="http://engineering.tufts.edu/bme/">BME Program</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3>Past years</h3>
+          <br>
+          <h4>Coming soon ...</h4>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Photo Gallery: 2013-14</h1>
+        <h4> Coming soon ...</h4>
+        <br>
+        <div id="galleryhere">
+               </div>
+      </div>
+    </div>
+    <br>
+    <footer>
+
+<p>Copyright &copy; CSS3_simplistic_2 | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+    </footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start WOWSlider.com BODY section id=wowslider-container6 -->
+	<div id="wowslider-container6">
+	<div class="ws_images"><ul>
+<li><img src="data6/images/fio_kaplan_bbq.jpg" alt="fio_kaplan_bbq" title="fio_kaplan_bbq" id="wows6_0"/></li>
+<li><img src="data6/images/gim2012.jpg" alt="gim2012" title="gim2012" id="wows6_1"/></li>
+<li><img src="data6/images/yuki_eyenetra.jpg" alt="yuki_eyenetra" title="yuki_eyenetra" id="wows6_2"/></li>
+</ul></div>
+<div class="ws_thumbs">
+<div>
+<a href="#wows6_0" title="fio_kaplan_bbq"><img src="data6/tooltips/fio_kaplan_bbq.jpg" alt="" /></a>
+<a href="#wows6_1" title="gim2012"><img src="data6/tooltips/gim2012.jpg" alt="" /></a>
+<a href="#wows6_2" title="yuki_eyenetra"><img src="data6/tooltips/yuki_eyenetra.jpg" alt="" /></a>
+</div>
+</div>
+<span class="wsl"><a href="http://wowslider.com">Software Slideshow</a> by WOWSlider.com v5.2m</span>
+	<a href="#" class="ws_frame"></a>
+	<div class="ws_shadow"></div>
+	</div>
+	<script type="text/javascript" src="engine6//wowslider.js"></script>
+	<script type="text/javascript" src="engine6//script.js"></script>
+<!-- End WOWSlider.com BODY section -->
+
+<p>&nbsp;</p>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/image_fade.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
+</body>
+</html>

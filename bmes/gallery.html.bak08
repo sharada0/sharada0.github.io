@@ -10,9 +10,52 @@
   <!-- modernizr enables HTML5 elements and feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
 
+
 <!-- Start WOWSlider.com HEAD section -->
-	<link rel="stylesheet" type="text/css" href="engine8//style.css" media="screen" />
-	<script type="text/javascript" src="engine8//jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine2//style.css" media="screen" />
+	<script type="text/javascript" src="engine2//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine2//style.css" media="screen" />
+	<script type="text/javascript" src="engine2//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine3//style.css" media="screen" />
+	<script type="text/javascript" src="engine3//jquery.js"></script>
 <!-- End WOWSlider.com HEAD section -->
 
 </head>
@@ -60,28 +103,7 @@
         <h4> Coming soon ...</h4>
         <br>
         <div id="galleryhere">
-<!-- Start WOWSlider.com BODY section id=wowslider-container8 -->
-  <div id="wowslider-container8">
-  <div class="ws_images"><ul>
-<li><img src="data8/images/fio_kaplan_bbq.jpg" alt="fio_kaplan_bbq" title="fio_kaplan_bbq" id="wows8_0"/></li>
-<li><img src="data8/images/gim2012.jpg" alt="gim2012" title="gim2012" id="wows8_1"/></li>
-<li><img src="data8/images/yuki_eyenetra.jpg" alt="yuki_eyenetra" title="yuki_eyenetra" id="wows8_2"/></li>
-</ul></div>
-<div class="ws_thumbs">
-<div>
-<a href="#wows8_0" title="fio_kaplan_bbq"><img src="data8/tooltips/fio_kaplan_bbq.jpg" alt="" /></a>
-<a href="#wows8_1" title="gim2012"><img src="data8/tooltips/gim2012.jpg" alt="" /></a>
-<a href="#wows8_2" title="yuki_eyenetra"><img src="data8/tooltips/yuki_eyenetra.jpg" alt="" /></a>
-</div>
-</div>
-<span class="wsl"><a href="http://wowslider.com">Software Slideshow</a> by WOWSlider.com v5.2m</span>
-  <a href="#" class="ws_frame"></a>
-  <div class="ws_shadow"></div>
-  </div>
-  <script type="text/javascript" src="engine8//wowslider.js"></script>
-  <script type="text/javascript" src="engine8//script.js"></script>
-<!-- End WOWSlider.com BODY section -->
-        </div>
+               </div>
       </div>
     </div>
     <br>
@@ -90,6 +112,32 @@
 <p>Copyright &copy; CSS3_simplistic_2 | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
     </footer>
   </div>
+
+
+
+
+
+<!-- Start WOWSlider.com BODY section id=wowslider-container3 -->
+	<div id="wowslider-container3">
+	<div class="ws_images"><ul>
+<li><img src="data3/images/fio_kaplan_bbq.jpg" alt="fio_kaplan_bbq" title="fio_kaplan_bbq" id="wows3_0"/></li>
+<li><img src="data3/images/gim2012.jpg" alt="gim2012" title="gim2012" id="wows3_1"/></li>
+<li><img src="data3/images/yuki_eyenetra.jpg" alt="yuki_eyenetra" title="yuki_eyenetra" id="wows3_2"/></li>
+</ul></div>
+<div class="ws_thumbs">
+<div>
+<a href="#wows3_0" title="fio_kaplan_bbq"><img src="data3/tooltips/fio_kaplan_bbq.jpg" alt="" /></a>
+<a href="#wows3_1" title="gim2012"><img src="data3/tooltips/gim2012.jpg" alt="" /></a>
+<a href="#wows3_2" title="yuki_eyenetra"><img src="data3/tooltips/yuki_eyenetra.jpg" alt="" /></a>
+</div>
+</div>
+<span class="wsl"><a href="http://wowslider.com">Software Slideshow</a> by WOWSlider.com v5.2m</span>
+	<a href="#" class="ws_frame"></a>
+	<div class="ws_shadow"></div>
+	</div>
+	<script type="text/javascript" src="engine3//wowslider.js"></script>
+	<script type="text/javascript" src="engine3//script.js"></script>
+<!-- End WOWSlider.com BODY section -->
 
 <p>&nbsp;</p>
   <!-- javascript at the bottom for fast page loading -->
